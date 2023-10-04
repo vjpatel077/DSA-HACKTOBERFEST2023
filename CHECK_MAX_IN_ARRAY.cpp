@@ -3,6 +3,7 @@
 using namespace std;
 int maximum (int arr[],int n)
 {
+    if(n >= 1){
     int max=arr[0];
     for(int i=1;i<n;i++)
     {
@@ -12,6 +13,8 @@ int maximum (int arr[],int n)
         }
     }
     return max;
+    }
+    return INT_MIN;
 }
 int main()
 {
