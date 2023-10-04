@@ -1,0 +1,84 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void Reverse(int a[],int n)
+{
+    cout<<"INSIDE Reverse FUNCTION\n";
+   int  start=a[0];
+   int  end =a[n-1];
+   while(start>end)
+   {
+    swap(start,end);
+    start++; end++;
+   }
+   for(int i=0;i<n;i++)
+       cout<<a[i]<<endl;
+
+}
+void  Display(int arr[],int n)
+{
+    cout<<"Display function\n";
+    for(int i =0;i<n;i++){
+      cout<<arr[i];}
+}
+void Input(int arr[],int n)
+{   cout<<"ENTER ARRAY ELEMENTS::\n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+
+}
+bool Linear_Search(int arr[],int n,int key)
+{
+    for(int i=0;i<n;i++){
+      if(arr[i]==key){  
+           return 1;}
+    
+       else{
+       return 0;}
+    }
+}
+
+
+int main(){
+    int arr[10],ch,num;
+    
+    cout<<"******************MENUE DRIVEN***************************\n";
+    cout<<"1.Input array elements\n";
+    cout<<"2.search array element if present\n";
+    cout<<"3.reverse array\n";
+    cout<<"4.Dispaly array\n";
+    cout<<"5. Exit\n";
+     
+     bool loop=1;
+     while(loop)
+     {
+        cout<<"ENTER YOUR CHOICE::";
+        cin>>ch;
+        switch(ch)
+        {
+
+            case 1 :Input(arr,10);
+                    break;
+
+            case 2 :cout<<"ENTER ELEMENT TO SEARCH:\n";
+                    cin>>num;
+                    if(Linear_Search(arr,10,num)==1){cout<<"ELEMENT PRESENT IN ARRAY\n";}
+                    else{cout<<"ABSENT IN ARRAY\n";}   
+                    break;
+
+            case 3  :Reverse(arr,10);
+                      break;
+
+            case 4  : Display(arr,10);
+
+            case 5  : loop=0;
+
+
+            default : cout<<"Enter valid input!\n";         
+        }
+
+     }
+     return 0;
+}
